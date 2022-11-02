@@ -1,0 +1,15 @@
+{% extends "base.html" %} 
+{% block title %} 
+Et cetera 
+{% endblock %} 
+{% block body %}
+<div class="tut">
+  <hr class="border border-secondary" />
+  <p><a href=" {% url 'singing' %} ">singing</a></p>
+  <hr class="border border-secondary" />
+  {% for e in et %}
+  <p><a href=" {{ e.passion_url }} " target="_new">{{ e.passion_name }}</a></p>
+  <hr class="border border-secondary" />
+  {% endfor %}
+</div>
+{% endblock %}

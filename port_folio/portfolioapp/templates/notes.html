@@ -1,0 +1,15 @@
+{% extends "base.html" %} 
+{% block title %} 
+Notes 
+{% endblock %} 
+{% block body %}
+<div class="tut">
+  <hr />
+  <p><a href=" {% url 'inf' %} ">Information</a></p>
+  <hr />
+  <p><a href=" {% url 'design' %} ">Design</a></p>
+  <hr />
+  <p><a href=" {% url 'web_design' %} ">Web Design</a></p>
+  <hr />
+</div>
+{% endblock %}

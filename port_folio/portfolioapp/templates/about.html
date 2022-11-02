@@ -1,0 +1,81 @@
+{% extends "base.html" %} 
+{% block title %} 
+About Page 
+{% endblock %} 
+{% block body %}
+<div class="container">
+  <hr class="border border-white w-75" />
+  <div class="content">
+    <span>Regular guy <sup>TM</sup></span>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <p>
+      {% for el in det %}
+        {% if el.regular|length > 0 %}
+          {{ el.regular }}
+        {% endif %}
+      {% endfor %} 
+    </p>
+    <br />
+    <br />
+    <h3>Work</h3>
+    {% for el in det %}
+      {% if el.wrk|length > 0 %}
+        <p>
+          {{ el.wrk }}
+        </p>
+        <br />
+      {% endif %}
+    {% endfor %}
+    <p>Here are the technologies and tools I typically work with:</p>
+    <br />
+    <ul>
+      {% for el in det %} 
+        {% if el.techno|length > 0 %}
+          <li>
+            {{ el.techno }}
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+    <br />
+    <h3>
+      A short history of my <br />
+      engagement with web technologies,<br />
+      startups 
+    </h3>
+    <br />
+    <ul>
+      {% for el in det %}
+        {% if el.hstry|length > 0 %}
+          <li>
+            {{ el.hstry }}
+          </li>
+        {% endif %} 
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm">
+    <div class="row">
+      {% for d in det %}
+        {% if d.title|length > 0 %}
+          <div class="col-sm-auto m-4">
+            <div class="cards m-4" style="width: 18rem">
+              <img src="{{ d.image.url }}" class="card-img-bottom" alt="..." />
+            <div class="card-body">
+            <p class="card-text">{{ d.title }}</p>
+            </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

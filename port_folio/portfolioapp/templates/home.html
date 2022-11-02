@@ -1,0 +1,40 @@
+{% extends "base.html" %} {% block title %}home{% endblock %} {% block body %}
+<div class="row">
+  <div class="col-sm-12">
+    <h1 class="head mt-5">
+      Hello, I’m a designer & developer.<br />
+      I work on design systems, websites and web apps.
+    </h1>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm">
+      <div class="row ">
+      {% for ele in im %}
+      <div class="col-sm-auto m-4">
+      <div class="card m-4" style="width: 18rem">
+        <img src="{{ ele.img.url }}" class="card-img" alt="..." />
+        <div class="card-body">
+          <p class="card-text"></p>
+        </div>
+      </div>
+    </div>
+      {% endfor %}
+    </div>
+    </div>
+  </div>
+</div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="ni">
+        <ul>
+          <li><a href=" {% url 'work' %} ">Read case studies</a></li>
+          <li><a href=" {% url 'work' %} ">See more work</a></li>
+          <li><a href=" {% url 'about' %} ">About pradeep</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+</div>

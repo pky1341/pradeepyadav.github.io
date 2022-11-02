@@ -1,0 +1,44 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block title %} 
+Singing 
+{% endblock %} 
+{% block body %}
+<div class="row">
+  <div class="col-sm-2 tb">
+    <table style="margin-top: -218px">
+      <thead>
+        <tr>
+          <th>choice</th>
+        </tr>
+        <tr>
+          <th>Audio</th>
+        </tr>
+        <tr>
+          <th>Video</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+      <div class="col-sm">
+        <div class="row">
+          {% for sg in cont %}
+          <div class="col-sm-auto mb-5">
+            <div class="sing">
+              <div class="album">
+                <img
+                  src=""
+                  alt="not available seat"
+                  srcset=""
+                  width="14vw"
+                  height="28vh"
+                />
+              </div>
+              <div class="Sname">{{ sg.sname }}</div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "base.html" %} 
+{% block title %} Tutorials {% endblock %} 
+{% block body %}
+<div class="tut">
+  <hr class="border border-secondary" />
+  {% for n in val %}
+  <p><a href=" {{ n.urlf }} " target="_new"> {{ n.tutname }}</a></p>
+  <hr class="border border-secondary" />
+  {% endfor %}
+  
+</div>
+{% endblock %}

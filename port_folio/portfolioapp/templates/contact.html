@@ -1,0 +1,57 @@
+{% extends "base.html" %} 
+{% block title %} Contact Me 
+{% endblock %} 
+{% block body %}
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+  $document.ready(function() {
+    $("#onclick").click(function() {
+      alert("thanks!!! for suggestion");
+  });
+</script>
+<div class="row">
+  <div class="col-sm-4 ">
+    <h1 class="text-center con">Con<span class="text-danger">t</span>ac<span class="text-danger">t</span> Me</h1>
+    <div class="mt-5">
+    <section class="mt-3 " style="height: 92px;">
+      <a class="text-decoration-none text-white" href="https://goo.gl/maps/S36JQqUmizjhkTUr7"><i class="bi fa-solid fa-location-dot"></i></a><span class="fs-5 ms-3">kapsa mubarkpur phulpur Alld.</span>
+    </section>
+    <section class="mt-3 " style="height: 92px;">
+      <i class="bi fa-solid fa-envelope"></i> <span class="fs-5 ms-3">pradeep663299@gmail.com</span>
+    </section>
+    <section class="mt-3 " style="height: 92px;">
+      <i class="bi fa-solid fa-phone"></i> <span class="fs-5 ms-3">+91 7235804914</span>
+    </section>
+  </div>
+  </div>
+  <div class="col-sm-8">
+    <h3 style="font-size: 26px;
+    color: #FF004F;
+    margin: 16px 0px;
+">
+      You can suggest me anything here..
+    </h3>
+    <form action="/contact/" method="post">
+      {% csrf_token %}
+      <div class="mb-3 fm">
+        
+        <input type="text" name="name" placeholder="Enter your Name.." class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+        
+      </div>
+      <div class="mb-3 fm">
+        
+        <input type="email" name="email" placeholder="Enter your valid Email.." class="form-control " id="exampleInputPassword1">
+      </div>
+      <div class="mb-3 fm">
+        
+        <input type="number" name="num" placeholder="Enter your 10 digit number.." class="form-control" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3 fm">
+        
+        <textarea name="sug" id="" cols="30" rows="7" placeholder="Your suggestion" class="form-control"></textarea>
+      </div>
+      <button type="submit" id=onclick class="btn bt btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
